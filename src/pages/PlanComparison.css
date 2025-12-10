@@ -1,0 +1,418 @@
+.plans-page {
+  padding: 40px 0;
+  background-color: var(--bg-gray);
+  min-height: calc(100vh - 200px);
+}
+
+.compare-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.plan-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.compare-checkbox {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.compare-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.plan-tier {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tier-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tier-bronze {
+  background-color: #cd7f32;
+  color: var(--white);
+}
+
+.tier-silver {
+  background-color: #c0c0c0;
+  color: var(--text-dark);
+}
+
+.tier-gold {
+  background-color: #ffd700;
+  color: var(--text-dark);
+}
+
+.tier-platinum {
+  background-color: #e5e4e2;
+  color: var(--text-dark);
+  border: 2px solid #a0b2c6;
+}
+
+.plan-type {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.plan-card h2 {
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.plan-premium {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--bg-gray);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.premium-free {
+  color: var(--success-green);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.premium-amount {
+  color: var(--primary-blue);
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.premium-period {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.plan-basics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--bg-gray);
+}
+
+.basic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basic-label {
+  color: var(--text-medium);
+  font-size: 0.9375rem;
+}
+
+.basic-value {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.plan-highlights h4 {
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.plan-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.plan-highlights li {
+  color: var(--text-medium);
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.plan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-blue);
+  font-weight: 600;
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.comparison-table-container {
+  overflow-x: auto;
+  margin-bottom: 60px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.comparison-table thead th {
+  background-color: var(--bg-gray);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.feature-column {
+  width: 200px;
+  min-width: 200px;
+  font-weight: 600;
+  background-color: var(--bg-gray);
+  position: sticky;
+  left: 0;
+  z-index: 11;
+}
+
+.feature-name {
+  font-weight: 600;
+  background-color: var(--white);
+  position: sticky;
+  left: 0;
+}
+
+.compare-plan-header {
+  text-align: center;
+}
+
+.compare-plan-header h3 {
+  margin: 12px 0;
+  font-size: 1.125rem;
+}
+
+.compare-premium {
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.plans-details-section {
+  margin-top: 60px;
+}
+
+.plans-details-section > h2 {
+  color: var(--text-dark);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.plan-detail-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--bg-gray);
+}
+
+.detail-header h3 {
+  color: var(--primary-blue);
+  margin: 12px 0 8px 0;
+}
+
+.plan-eligibility {
+  color: var(--text-light);
+  font-size: 0.9375rem;
+  font-style: italic;
+}
+
+.detail-premium {
+  text-align: right;
+}
+
+.detail-section {
+  margin-bottom: 32px;
+}
+
+.detail-section h4 {
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.detail-item {
+  color: var(--text-medium);
+  font-size: 0.9375rem;
+}
+
+.detail-item strong {
+  color: var(--text-dark);
+  margin-left: 6px;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: var(--bg-gray);
+  border-radius: 4px;
+}
+
+.benefit-row span {
+  color: var(--text-medium);
+}
+
+.benefit-row strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.features-list li {
+  color: var(--success-green);
+  font-size: 0.9375rem;
+  padding: 8px;
+  background-color: var(--bg-gray);
+  border-radius: 4px;
+}
+
+.limitations-list {
+  list-style: none;
+  padding: 0;
+}
+
+.limitations-list li {
+  color: var(--text-medium);
+  font-size: 0.9375rem;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid var(--bg-gray);
+}
+
+@media (max-width: 768px) {
+  .plans-page {
+    padding: 24px 0;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table {
+    font-size: 0.875rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 8px;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-premium {
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,200 @@
+.eligibility-page {
+  padding: 40px 0;
+  background-color: var(--bg-gray);
+  min-height: calc(100vh - 200px);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  color: var(--text-medium);
+  font-size: 1.125rem;
+}
+
+.progress-bar {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 3px solid var(--border-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+  background-color: var(--white);
+}
+
+.progress-step.active .step-circle {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  background-color: var(--white);
+}
+
+.progress-step.completed .step-circle {
+  border-color: var(--success-green);
+  background-color: var(--success-green);
+  color: var(--white);
+}
+
+.step-label {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.progress-step.active .step-label {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 3px;
+  background-color: var(--success-green);
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.step-content {
+  margin-bottom: 32px;
+}
+
+.step-content h2 {
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.step-description {
+  color: var(--text-medium);
+  margin-bottom: 32px;
+  font-size: 1.0625rem;
+}
+
+.household-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.input-with-prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 12px;
+  color: var(--text-medium);
+  font-weight: 600;
+  font-size: 1.125rem;
+  pointer-events: none;
+}
+
+.form-input.with-prefix {
+  padding-left: 32px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid var(--bg-gray);
+}
+
+.form-actions .btn {
+  min-width: 120px;
+}
+
+.help-box {
+  background-color: var(--white);
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.help-box h4 {
+  color: var(--primary-blue);
+  margin-bottom: 8px;
+}
+
+.help-box p {
+  color: var(--text-medium);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .eligibility-page {
+    padding: 24px 0;
+  }
+
+  .progress-steps {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .step-label {
+    font-size: 0.75rem;
+  }
+
+  .progress-fill {
+    display: none;
+  }
+
+  .household-members {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,161 @@
+.header {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 16px 0;
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-dept {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 0.875rem;
+  opacity: 0.95;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-language,
+.btn-logout {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-language:hover,
+.btn-logout:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-nav {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 16px 20px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-menu a:hover {
+  background-color: var(--bg-gray);
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--text-dark);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .header-dept {
+    font-size: 1rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-menu.open {
+    max-height: 400px;
+  }
+
+  .nav-menu a {
+    border-bottom: 1px solid var(--border-gray);
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-language,
+  .btn-logout {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
