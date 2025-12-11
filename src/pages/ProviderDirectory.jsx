@@ -200,7 +200,10 @@ function ProviderDirectory() {
             <div className="results-header">
               <div className="results-info">
                 <h3>{filteredProviders.length} Providers Found</h3>
-                <p>Showing {paginatedProviders.length} of {filteredProviders.length} results</p>
+                <p>
+                  Showing {filteredProviders.length === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1}-
+                  {Math.min(currentPage * itemsPerPage, filteredProviders.length)} of {filteredProviders.length} results
+                </p>
               </div>
 
               <div className="view-toggle">
