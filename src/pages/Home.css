@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #2d7a3e 0%, #1e5a2b 100%);
+  background: linear-gradient(135deg, #e67e22 0%, #c0631a 100%);
   color: var(--white);
   padding: 80px 0;
   text-align: center;
@@ -116,7 +116,7 @@
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #2d7a3e 0%, #1a5928 100%);
+  background: linear-gradient(135deg, #e67e22 0%, #c0631a 100%);
   color: var(--white);
   padding: 60px 0;
   text-align: center;
