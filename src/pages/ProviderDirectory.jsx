@@ -224,6 +224,28 @@ function ProviderDirectory() {
               </div>
             </div>
 
+            {totalPages > 1 && viewMode === 'list' && (
+              <div className="pagination">
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                >
+                  ← Previous
+                </button>
+                <span className="page-info">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next →
+                </button>
+              </div>
+            )}
+
             {filteredProviders.length === 0 ? (
               <div className="no-results">
                 <h3>No providers found</h3>
