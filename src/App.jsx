@@ -11,6 +11,7 @@ import ProviderDirectory from './pages/ProviderDirectory'
 import ProviderDetail from './pages/ProviderDetail'
 import MemberLogin from './pages/MemberLogin'
 import DocumentCenter from './pages/DocumentCenter'
+import FAQ from './pages/FAQ'
 import { AppContext } from './context/AppContext'
 import './App.css'
 
@@ -90,6 +91,7 @@ function App() {
               <Route path="/member/documents" element={
                 isLoggedIn ? <DocumentCenter /> : <Navigate to="/login" />
               } />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </main>
           <Footer />

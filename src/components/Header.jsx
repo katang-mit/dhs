@@ -73,6 +73,7 @@ function Header() {
             <li><Link to="/eligibility" onClick={() => setMobileMenuOpen(false)}>Check Eligibility</Link></li>
             <li><Link to="/plans" onClick={() => setMobileMenuOpen(false)}>Compare Plans</Link></li>
             <li><Link to="/providers" onClick={() => setMobileMenuOpen(false)}>Find Providers</Link></li>
+            <li><Link to="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</Link></li>
             <li>
               <Link to={isLoggedIn ? "/member/documents" : "/login"} onClick={() => setMobileMenuOpen(false)}>
                 Member Portal

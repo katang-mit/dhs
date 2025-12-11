@@ -19,7 +19,7 @@ function Footer() {
           <div className="footer-section">
             <h3>Resources</h3>
             <ul>
-              <li><a href="#faq">Frequently Asked Questions</a></li>
+              <li><Link to="/faq">Frequently Asked Questions</Link></li>
               <li><a href="#contact">Contact Us</a></li>
               <li><a href="#accessibility">Accessibility</a></li>
               <li><a href="#privacy">Privacy Policy</a></li>
