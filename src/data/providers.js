@@ -1053,6 +1053,10 @@ export const searchProviders = (filters) => {
     filtered = filtered.filter(p => p.gender === filters.gender)
   }
 
+  if (filters.state && filters.state !== 'all') {
+    filtered = filtered.filter(p => p.state === filters.state)
+  }
+
   if (filters.searchTerm) {
     const term = filters.searchTerm.toLowerCase()
     filtered = filtered.filter(p =>
@@ -1076,4 +1080,9 @@ export const getUniqueLanguages = () => {
     p.languages.forEach(lang => languages.add(lang))
   })
   return Array.from(languages).sort()
+}
+
+export const getUniqueStates = () => {
+  const states = [...new Set(providers.map(p => p.state))]
+  return states.sort()
 }

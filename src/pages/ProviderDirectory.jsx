@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { providers, searchProviders, getUniqueSpecialties, getUniqueLanguages } from '../data/providers'
+import { providers, searchProviders, getUniqueSpecialties, getUniqueLanguages, getUniqueStates } from '../data/providers'
 import './ProviderDirectory.css'
 
 function ProviderDirectory() {
@@ -10,6 +10,7 @@ function ProviderDirectory() {
     specialty: 'all',
     language: 'all',
     gender: 'all',
+    state: 'all',
     acceptingNewPatients: false,
     searchTerm: ''
   })
@@ -18,6 +19,7 @@ function ProviderDirectory() {
 
   const specialties = getUniqueSpecialties()
   const languages = getUniqueLanguages()
+  const states = getUniqueStates()
 
   const filteredProviders = useMemo(() => {
     return searchProviders(filters)
@@ -41,6 +43,7 @@ function ProviderDirectory() {
       specialty: 'all',
       language: 'all',
       gender: 'all',
+      state: 'all',
       acceptingNewPatients: false,
       searchTerm: ''
     })
@@ -167,6 +170,21 @@ function ProviderDirectory() {
             </div>
 
             <div className="filter-group">
+              <label htmlFor="state" className="filter-label">State</label>
+              <select
+                id="state"
+                className="form-select"
+                value={filters.state}
+                onChange={(e) => handleFilterChange('state', e.target.value)}
+              >
+                <option value="all">All States</option>
+                {states.map(state => (
+                  <option key={state} value={state}>{state}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
               <label className="checkbox-item">
                 <input
                   type="checkbox"
@@ -182,7 +200,10 @@ function ProviderDirectory() {
             <div className="results-header">
               <div className="results-info">
                 <h3>{filteredProviders.length} Providers Found</h3>
-                <p>Showing {paginatedProviders.length} of {filteredProviders.length} results</p>
+                <p>
+                  Showing {filteredProviders.length === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1}-
+                  {Math.min(currentPage * itemsPerPage, filteredProviders.length)} of {filteredProviders.length} results
+                </p>
               </div>
 
               <div className="view-toggle">
@@ -202,6 +223,28 @@ function ProviderDirectory() {
                 </button>
               </div>
             </div>
+
+            {totalPages > 1 && viewMode === 'list' && (
+              <div className="pagination">
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                >
+                  ← Previous
+                </button>
+                <span className="page-info">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next →
+                </button>
+              </div>
+            )}
 
             {filteredProviders.length === 0 ? (
               <div className="no-results">
