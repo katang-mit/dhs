@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { providers, searchProviders, getUniqueSpecialties, getUniqueLanguages } from '../data/providers'
+import { providers, searchProviders, getUniqueSpecialties, getUniqueLanguages, getUniqueStates } from '../data/providers'
 import './ProviderDirectory.css'
 
 function ProviderDirectory() {
@@ -10,6 +10,7 @@ function ProviderDirectory() {
     specialty: 'all',
     language: 'all',
     gender: 'all',
+    state: 'all',
     acceptingNewPatients: false,
     searchTerm: ''
   })
@@ -18,6 +19,7 @@ function ProviderDirectory() {
 
   const specialties = getUniqueSpecialties()
   const languages = getUniqueLanguages()
+  const states = getUniqueStates()
 
   const filteredProviders = useMemo(() => {
     return searchProviders(filters)
@@ -41,6 +43,7 @@ function ProviderDirectory() {
       specialty: 'all',
       language: 'all',
       gender: 'all',
+      state: 'all',
       acceptingNewPatients: false,
       searchTerm: ''
     })
@@ -163,6 +166,21 @@ function ProviderDirectory() {
                 <option value="all">Any Gender</option>
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label htmlFor="state" className="filter-label">State</label>
+              <select
+                id="state"
+                className="form-select"
+                value={filters.state}
+                onChange={(e) => handleFilterChange('state', e.target.value)}
+              >
+                <option value="all">All States</option>
+                {states.map(state => (
+                  <option key={state} value={state}>{state}</option>
+                ))}
               </select>
             </div>
 
