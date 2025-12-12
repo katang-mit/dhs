@@ -5,7 +5,7 @@
 }
 
 .member-info-card {
-  background: linear-gradient(135deg, #e67e22 0%, #c0631a 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: var(--white);
   border-radius: 8px;
   padding: 24px;
@@ -44,7 +44,7 @@
 }
 
 .digital-card {
-  background: linear-gradient(135deg, #e67e22 0%, #c0631a 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: var(--white);
   border-radius: 12px;
   padding: 28px;
