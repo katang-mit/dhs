@@ -11,6 +11,7 @@ import ProviderDirectory from './pages/ProviderDirectory'
 import ProviderDetail from './pages/ProviderDetail'
 import MemberLogin from './pages/MemberLogin'
 import DocumentCenter from './pages/DocumentCenter'
+import FAQ from './pages/FAQ'
 import { AppContext } from './context/AppContext'
 import './App.css'
 
@@ -86,6 +87,7 @@ function App() {
               <Route path="/plans" element={<PlanComparison />} />
               <Route path="/providers" element={<ProviderDirectory />} />
               <Route path="/providers/:id" element={<ProviderDetail />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/login" element={<MemberLogin />} />
               <Route path="/member/documents" element={
                 isLoggedIn ? <DocumentCenter /> : <Navigate to="/login" />
